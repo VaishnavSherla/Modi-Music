@@ -51,7 +51,8 @@ function App() {
     if (!songRef) {
       setIsPaused(false);
     }
-    
+    // songRef.current.play();
+
     // Cleanup
     return () => {
       audioElement.removeEventListener('loadedmetadata', playAudio);
