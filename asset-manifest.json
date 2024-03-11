@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Modi-Music/static/css/main.f6f91706.css",
-    "main.js": "/Modi-Music/static/js/main.e2a1eabe.js",
+    "main.js": "/Modi-Music/static/js/main.c4be8311.js",
     "static/js/453.3fe92715.chunk.js": "/Modi-Music/static/js/453.3fe92715.chunk.js",
     "service-worker.js": "/Modi-Music/service-worker.js",
     "index.html": "/Modi-Music/index.html",
     "main.f6f91706.css.map": "/Modi-Music/static/css/main.f6f91706.css.map",
-    "main.e2a1eabe.js.map": "/Modi-Music/static/js/main.e2a1eabe.js.map",
+    "main.c4be8311.js.map": "/Modi-Music/static/js/main.c4be8311.js.map",
     "453.3fe92715.chunk.js.map": "/Modi-Music/static/js/453.3fe92715.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6f91706.css",
-    "static/js/main.e2a1eabe.js"
+    "static/js/main.c4be8311.js"
   ]
 }
