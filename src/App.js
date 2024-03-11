@@ -26,40 +26,40 @@ function App() {
 
   useEffect(() => {
     const playAudio = () => {
-      if (songRef.current) {
+      if (songRef.current && isPaused) {
+        songRef.current.pause();
+        setIsPaused(true)
+      } else if (songRef.current) {
         songRef.current.currentTime = 0;
-        songRef.current.play().catch(error => {
-          console.error('Failed to play audio:', error);
-        });
+        songRef.current.play();
+        setIsPaused(false);
       }
     };
-
+  
     const handleSongEnd = () => {
       setCurrIdx((currSongIdx + 1) % audios.length);
     };
-
-    const audioElement = window.document
-      .getElementById('audio_element');
+  
+    const audioElement = document.getElementById('audio_element');
+    if (!audioElement) {
+      console.error('Audio element not found');
+      return;
+    }
+  
     audioElement.addEventListener('loadedmetadata', (e) => {
       songRef.current = e.target;
       playAudio();
-      setIsPaused(false);
     });
-  
+
     audioElement.addEventListener('ended', handleSongEnd);
-
-    if (!songRef) {
-      setIsPaused(false);
-    }
-    // songRef.current.play();
-
+  
     // Cleanup
     return () => {
       audioElement.removeEventListener('loadedmetadata', playAudio);
       audioElement.removeEventListener('ended', handleSongEnd);
     };
-  }, [currSongIdx]);
-
+  }, [currSongIdx, isPaused]);
+  
   return (
     <div className='root'>
       <div className='container'>
