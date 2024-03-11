@@ -16,28 +16,45 @@ function App() {
   const songRef = useRef(null);
 
   const handleNextSong = () => {
-    setCurrIdx((currSongIdx + 1) % audios.length);
+    const newIdx = (currSongIdx + 1) % audios.length
+    setCurrIdx(newIdx);
+    localStorage.setItem('currSongIdx', newIdx);
   };
 
   const handlePrevSong = () => {
-    const newIndex = (currSongIdx - 1 + audios.length) % audios.length;
-    setCurrIdx(newIndex);
+    const newIdx = (currSongIdx - 1 + audios.length) % audios.length;
+    setCurrIdx(newIdx);
+    localStorage.setItem('currSongIdx', newIdx);
+  };
+
+  const handleTimeUpdate = () => {
+    if (songRef.current) {
+      setCurrTime(songRef.current.currentTime);
+    }
   };
 
   useEffect(() => {
+    if (localStorage.getItem('currSongIdx') != null) {
+      setCurrIdx(parseInt(localStorage.getItem('currSongIdx')));
+    }
+
     const playAudio = () => {
       if (songRef.current && isPaused) {
         songRef.current.pause();
         setIsPaused(true)
       } else if (songRef.current) {
         songRef.current.currentTime = 0;
-        songRef.current.play();
+        songRef.current.play().catch(error => {
+          console.error('Failed to play audio:', error);
+        });
         setIsPaused(false);
       }
     };
-  
+    
     const handleSongEnd = () => {
-      setCurrIdx((currSongIdx + 1) % audios.length);
+      const newIdx = (currSongIdx + 1) % audios.length
+      setCurrIdx(newIdx);
+      localStorage.setItem('currSongIdx', newIdx);
     };
   
     const audioElement = document.getElementById('audio_element');
@@ -73,7 +90,7 @@ function App() {
         <div className='song'>
           <h1>{audios[currSongIdx].songName}</h1>
           <p>Modi Ji! 🔥</p>
-          <audio src={audios[currSongIdx].src} id='audio_element' onTimeUpdate={() => setCurrTime(songRef.current.currentTime)} />
+          <audio src={audios[currSongIdx].src} id='audio_element' onTimeUpdate={handleTimeUpdate}/>
         </div>
 
         <div>
