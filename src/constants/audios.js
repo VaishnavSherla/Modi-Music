@@ -1,5 +1,10 @@
 const audios = [
     {
+        img: process.env.PUBLIC_URL + '/assets/images/06.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/PehleBhiMain.mp3',
+        songName: 'Pehle Bhi Main'
+    },
+    {
         img: process.env.PUBLIC_URL + '/assets/images/01.jpg',
         src: process.env.PUBLIC_URL + '/assets/audios/UnnakuThaan.mp3',
         songName: 'Unnaku Thaan'
