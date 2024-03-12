@@ -54,6 +54,19 @@ html, body {
   margin: 0;
   font-size: 2rem;
 }
+.repeat-container {
+  display: flex;
+  justify-content: center;
+}
+
+.repeat-btn {
+  border-radius: 50%;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
 
 .input {
   width: 90%;

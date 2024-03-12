@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
+import { CiRepeat } from "react-icons/ci";
 import NextBtn from './components/NextBtn';
 import PrevBtn from './components/PrevBtn';
 import PlayPauseBtn from './components/PlayPauseBtn';
@@ -12,7 +12,8 @@ function App() {
   const [currSongIdx, setCurrIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(true);
   const [currTime, setCurrTime] = useState(0);
-  
+  const [repeatMode, setRepeatMode] = useState(false);
+
   const songRef = useRef(null);
 
   const handleNextSong = () => {
@@ -52,11 +53,15 @@ function App() {
     };
     
     const handleSongEnd = () => {
+      if(repeatMode){
+        songRef.current.currentTime = 0;
+        songRef.current.play();
+      }else{
       const newIdx = (currSongIdx + 1) % audios.length
       setCurrIdx(newIdx);
       localStorage.setItem('currSongIdx', newIdx);
     };
-  
+    }
     const audioElement = document.getElementById('audio_element');
     if (!audioElement) {
       console.error('Audio element not found');
@@ -75,8 +80,11 @@ function App() {
       audioElement.removeEventListener('loadedmetadata', playAudio);
       audioElement.removeEventListener('ended', handleSongEnd);
     };
-  }, [currSongIdx, isPaused]);
+  }, [currSongIdx, isPaused, repeatMode]);
   
+  const handleRepeatMode = () => {
+    setRepeatMode(!repeatMode);
+  };
   return (
     <div className='root'>
       <div className='container'>
@@ -89,7 +97,13 @@ function App() {
 
         <div className='song'>
           <h1>{audios[currSongIdx].songName}</h1>
+          <div className='repeat-container'>
           <p>Modi Ji! 🔥</p>
+          <button  className='repeat-btn' onClick={handleRepeatMode}>
+            <CiRepeat color={repeatMode ? 'red' : 'black'} />
+          </button>
+          </div>
+         
           <audio src={audios[currSongIdx].src} id='audio_element' onTimeUpdate={handleTimeUpdate}/>
         </div>
 
