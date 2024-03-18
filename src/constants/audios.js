@@ -69,6 +69,41 @@ const audios = [
         src: process.env.PUBLIC_URL + '/assets/audios/NoLove.mp3',
         songName: 'No Love'
     },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/01.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/AamJaheMunde.mp3',
+        songName: 'Aam Jahe Munde'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/02.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/Satranga.mp3',
+        songName: 'Satranga'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/03.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/AgarTumSaathHo.mp3',
+        songName: 'Agar Tum Saath Ho'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/04.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/AbhiMujhMeinKahin.mp3',
+        songName: 'Abhi Mujh Mein Kahin'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/05.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/Kabira.mp3',
+        songName: 'Kabira'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/06.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/Naina.mp3',
+        songName: 'Naina'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/01.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/KalHoNaaHo.mp3',
+        songName: 'Kal Ho Naa Ho'
+    },
 ]
 
 export default audios;
