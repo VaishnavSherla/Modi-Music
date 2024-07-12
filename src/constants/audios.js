@@ -104,6 +104,11 @@ const audios = [
         src: process.env.PUBLIC_URL + '/assets/audios/KalHoNaaHo.mp3',
         songName: 'Kal Ho Naa Ho'
     },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/02.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/GulabiSadi.mp3',
+        songName: 'Gulabi Sadi'
+    },
 ]
 
 export default audios;
