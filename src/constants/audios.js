@@ -106,8 +106,48 @@ const audios = [
     },
     {
         img: process.env.PUBLIC_URL + '/assets/images/02.jpg',
-        src: process.env.PUBLIC_URL + '/assets/audios/GulabiSadi.mp3',
+        src: process.env.PUBLIC_URL + '/assets/audios/GulabiSadi.m4a',
         songName: 'Gulabi Sadi'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/03.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/LifeOfRam.m4a',
+        songName: 'Life of Ram'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/04.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/Thenmozhi.mp3',
+        songName: 'Thenmozhi'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/05.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/JamalKudu.mp3',
+        songName: 'Jamal Kudu'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/06.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/AalumaDoluma.mp3',
+        songName: 'Aaluma Doluma'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/01.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/MassMarana.mp3',
+        songName: 'Mass Marana'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/02.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/Maamadura.mp3',
+        songName: 'Maamadura'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/01.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/SomeTeluguMix.mp3',
+        songName: 'Telugu Mix'
+    },
+    {
+        img: process.env.PUBLIC_URL + '/assets/images/02.jpg',
+        src: process.env.PUBLIC_URL + '/assets/audios/TamilMix.mp3',
+        songName: 'Tamil Mix'
     },
 ]
 
